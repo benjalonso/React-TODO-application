@@ -17,9 +17,9 @@ const Todo = () => {
 		if (inputValue !== "" && e.keyCode === 13) {
 			setTodo([...todo, inputValue]);
 			setInputValue("");
-			alert("I hope you do it piece of shit!");
+			alert("You can do it!");
 		} else if (inputValue === "" && e.keyCode === 13) {
-			alert("You always have to do something lazy bitch");
+			alert("Always you can do something new!");
 		}
 	};
 	const deleteTodo = (index) => {
@@ -35,7 +35,7 @@ const Todo = () => {
 			<div className="container cajaTodo">
 				<input
 					className="todoInput"
-					placeholder="What kinda shit has to be done today?"
+					placeholder="What has to be done today?"
 					type="text"
 					onChange={(e) => setInputValue(e.target.value)}
 					onKeyUp={validateInput}
@@ -52,7 +52,7 @@ const Todo = () => {
 								{value}
 								<button
 									onClick={() => {
-										deleteTodo(index);
+										deleteTodo(value);
 									}}
 									className={deleteButton}>
 									X
