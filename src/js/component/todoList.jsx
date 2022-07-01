@@ -1,4 +1,5 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
+import swal from "sweetalert";
 
 const Todo = () => {
 	const [inputValue, setInputValue] = useState("");
@@ -17,9 +18,9 @@ const Todo = () => {
 		if (inputValue !== "" && e.keyCode === 13) {
 			setTodo([...todo, inputValue]);
 			setInputValue("");
-			alert("You can do it!");
+			swal("You can do it!", "Task has been added", "success");
 		} else if (inputValue === "" && e.keyCode === 13) {
-			alert("Always you can do something new!");
+			swal("Heeeey!", "Always you can do something new!");
 		}
 	};
 	const deleteTodo = (index) => {
