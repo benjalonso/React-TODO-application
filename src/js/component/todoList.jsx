@@ -23,9 +23,8 @@ const Todo = () => {
 		}
 	};
 	const deleteTodo = (index) => {
-		setTodo((prevState) =>
-			prevState.filter((todo, index) => index !== indexItem)
-		);
+		todo.splice(index, 1);
+		setTodo([...task]);
 	};
 	return (
 		<div>
@@ -52,7 +51,7 @@ const Todo = () => {
 								{value}
 								<button
 									onClick={() => {
-										deleteTodo(value);
+										deleteTodo(index);
 									}}
 									className={deleteButton}>
 									X
